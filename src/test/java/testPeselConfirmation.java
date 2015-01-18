@@ -100,6 +100,20 @@ public class testPeselConfirmation {
 		//then
 		Assertions.assertThat(date).isEqualTo(true);
 	}
+	
+	@Test
+	public void shouldReturnCorrectDate2() throws Exception {
+		
+		//given
+		String pesel = new String("44131401388");
+		PeselConfirmation pConfirmation = new PeselConfirmation(pesel);
+		//when 
+		
+		Boolean date = pConfirmation.checkDate();
+		
+		//then
+		Assertions.assertThat(date).isEqualTo(true);
+	}
 //	@Test
 //	public void testName1() throws Exception {
 //		
