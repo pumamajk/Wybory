@@ -2,6 +2,10 @@
 
 //import static org.junit.Assert.*;
 
+//import java.text.SimpleDateFormat;
+//import java.util.Calendar;
+//import java.util.Date;
+
 import org.fest.assertions.Assertions;
 import org.junit.Test;
 
@@ -98,25 +102,14 @@ public class testPeselConfirmation {
 		Boolean date = pConfirmation.checkDate();
 		
 		//then
-		Assertions.assertThat(date).isEqualTo(true);
+		Assertions.assertThat(date).isEqualTo(false);
 	}
-	
-	@Test
-	public void shouldReturnCorrectDate2() throws Exception {
-		
-		//given
-		String pesel = new String("44131401388");
-		PeselConfirmation pConfirmation = new PeselConfirmation(pesel);
-		//when 
-		
-		Boolean date = pConfirmation.checkDate();
-		
-		//then
-		Assertions.assertThat(date).isEqualTo(true);
-	}
+
 //	@Test
-//	public void testName1() throws Exception {
-//		
-//		Assertions.assertThat(actual).is
-	
+//	public void testData() throws Exception {
+//		SimpleDateFormat format = new SimpleDateFormat("MM.yyyy");
+//		format.setLenient(false);
+//		Date date = format.parse("13.2001");
+//		System.out.println(date);
+//	}	
 }

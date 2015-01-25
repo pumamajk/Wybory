@@ -4,7 +4,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.GregorianCalendar;
+//import java.util.GregorianCalendar;
 
 public class PeselConfirmation 
 {	
@@ -52,29 +52,22 @@ public class PeselConfirmation
 		System.out.println(dateString);
 		Date date = new Date();
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy.MM.dd");
+		dateFormat.setLenient(false);
 		
 		try {
-			
 			date = dateFormat.parse(dateString);
-			
+			Calendar calendar = Calendar.getInstance();
+			calendar.setTime(date);
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return false;
 		}
  
-	
-		Calendar dateCalendar = new GregorianCalendar();
-		dateCalendar.setTime(date);
-		
-		
-//		Integer intMonth = Integer.valueOf(month);
-//		Integer intDay = Integer.valueOf(day);
-//		
-//		
-//		System.out.println(newYear);
-//		System.out.println(intMonth);
-//		System.out.println(intDay);
+//	
+//		Calendar dateCalendar = new GregorianCalendar();
+//		dateCalendar.setTime(date);
+
 		return true;
 	}
 
